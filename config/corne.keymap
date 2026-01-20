@@ -11,20 +11,7 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        combo_game {
-            bindings = <&tog 0>;
-            key-positions = <36 41>;
-            timeout-ms = <200>;
-        };
-
-        game_esc {
-            bindings = <&kp ESC>;
-            key-positions = <1 2>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     behaviors {
         hml: hml {
