@@ -104,22 +104,6 @@
             label = "LAYER_RU";
         };
 
-        lay_en: lay_en {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&tog 1>, <&macro_tap>, <&kp LA(LS(NUMBER_0))>;
-
-            label = "LAY_EN";
-        };
-
-        lay_ru: lay_ru {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&tog 1>, <&macro_tap>, <&kp LA(LS(NUMBER_1))>;
-
-            label = "LAY_RU";
-        };
-
         en: en {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
@@ -177,45 +161,45 @@
 
         base_ru {
             bindings = <
-&trans  &hml RU_CYRILLIC_I RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &hml RU_CYRILLIC_IE RU_CYRILLIC_IO        &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE                               &hml RU_CYRILLIC_SHA RU_CYRILLIC_SHCHA  &hml RU_CYRILLIC_SHCHA RU_CYRILLIC_SHA  &kp RU_CYRILLIC_ZE   &trans
+&trans  &hml RU_CYRILLIC_I RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &hml RU_CYRILLIC_IO RU_CYRILLIC_IE        &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE                               &hml RU_CYRILLIC_SHCHA RU_CYRILLIC_SHA  &hml RU_CYRILLIC_SHA RU_CYRILLIC_SHCHA  &kp RU_CYRILLIC_ZE   &trans
 &trans  &kp RU_CYRILLIC_EF                      &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                        &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O                                 &kp RU_CYRILLIC_EL                      &kp RU_CYRILLIC_DE                      &kp RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_E
-&trans  &kp RU_CYRILLIC_YA                      &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &hml RU_CYRILLIC_I RU_CYRILLIC_SHORT_I    &kp RU_CYRILLIC_TE  &hml RU_CYRILLIC_SOFT_SIGN RU_CYRILLIC_HARD_SIGN  &kp RU_CYRILLIC_BE                      &kp RU_CYRILLIC_YU                      &kp RU_CYRILLIC_HA   &trans
+&trans  &kp RU_CYRILLIC_YA                      &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &hml RU_CYRILLIC_SHORT_I RU_CYRILLIC_I    &kp RU_CYRILLIC_TE  &hml RU_CYRILLIC_HARD_SIGN RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE                      &kp RU_CYRILLIC_YU                      &kp RU_CYRILLIC_HA   &trans
                                                                       &trans              &trans              &trans                                    &trans              &trans                                            &trans
             >;
         };
 
         functional {
             bindings = <
-&kp LC(R)             &kp F1   &kp F2   &kp F3             &kp F4   &kp F5             &kp PAGE_UP    &kp C_PREV          &kp UP      &kp C_NEXT       &kp PRINTSCREEN  &kp BACKSPACE
+&kp LC(R)             &kp F1   &kp F2   &kp F3             &kp F4   &kp F5             &kp PAGE_UP    &kp C_PREV          &kp UP      &kp C_NEXT       &kp PRINTSCREEN  &kp LC(LA(DEL))
 &hml LC(T) LA(LC(T))  &kp F6   &kp F7   &kp F8             &kp F9   &kp F10            &kp PAGE_DOWN  &kp LEFT_ARROW      &kp DOWN    &kp RIGHT_ARROW  &kp INSERT       &kp CAPS
-&kp LSHFT             &kp F11  &kp F12  &kp F13            &kp F14  &kp F15            &kp HOME       &kp LC(LEFT_ARROW)  &kp LC(D)   &kp LC(RIGHT)    &kp LC(END)      &kp RCTRL
+&kp LSHFT             &kp F11  &kp F12  &kp F13            &kp F14  &kp F15            &kp HOME       &kp LC(LEFT_ARROW)  &kp LC(D)   &kp LC(RIGHT)    &kp END          &kp RCTRL
                                         &kp C_VOLUME_DOWN  &trans   &kp C_VOLUME_UP    &kp C_PLAY     &trans              &kp C_MUTE
             >;
         };
 
         numbers_symbols_en {
             bindings = <
-&trans            &kp DOLLAR    &kp AT_SIGN   &kp AMPERSAND      &kp PRCNT     &kp CARET               &kp HASH                         &kp EXCLAMATION        &kp QMARK         &kp EQUAL          &kp NON_US_BACKSLASH  &trans
-&hml TILDE GRAVE  &kp N1        &kp NUMBER_2  &kp NUMBER_3       &kp NUMBER_4  &kp NUMBER_5            &kp LEFT_PARENTHESIS             &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PLUS              &hml UNDER MINUS
-&trans            &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8       &kp NUMBER_9  &kp NUMBER_0            &kp LEFT_BRACE                   &kp RIGHT_BRACE        &kp LESS_THAN     &kp GREATER_THAN   &kp ASTERISK          &kp SLASH
-                                              &hml COMMA PERIOD  &trans        &hml COLON SEMICOLON    &hml DOUBLE_QUOTES SINGLE_QUOTE  &trans                 &trans
+&kp GRAVE  &kp DOLLAR    &kp AT_SIGN   &kp AMPERSAND      &kp PRCNT     &kp CARET               &kp HASH                         &kp EXCLAMATION        &kp QMARK         &kp EQUAL          &kp NON_US_BACKSLASH  &ru HASH
+&kp TILDE  &kp N1        &kp NUMBER_2  &kp NUMBER_3       &kp NUMBER_4  &kp NUMBER_5            &kp LEFT_PARENTHESIS             &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PLUS              &hml UNDER MINUS
+&trans     &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8       &kp NUMBER_9  &kp NUMBER_0            &kp LEFT_BRACE                   &kp RIGHT_BRACE        &kp LESS_THAN     &kp GREATER_THAN   &kp ASTERISK          &kp SLASH
+                                       &hml COMMA PERIOD  &trans        &hml COLON SEMICOLON    &hml DOUBLE_QUOTES SINGLE_QUOTE  &trans                 &trans
             >;
         };
 
         numbers_symbols_ru {
             bindings = <
-&trans            &en DOLLAR  &en AT_SIGN  &en AMPERSAND      &en PRCNT  &en CARET               &kp HASH                         &en EXCLAMATION        &en QMARK         &en EQUAL          &en NON_US_BACKSLASH  &trans
-&hml TILDE GRAVE  &trans      &trans       &trans             &trans     &trans                  &en LEFT_PARENTHESIS             &en RIGHT_PARENTHESIS  &en LEFT_BRACKET  &en RIGHT_BRACKET  &en PLUS              &hml UNDER MINUS
-&trans            &trans      &trans       &trans             &trans     &trans                  &en LEFT_BRACE                   &en RIGHT_BRACE        &en LESS_THAN     &en GREATER_THAN   &en ASTERISK          &en SLASH
-                                           &hml COMMA PERIOD  &trans     &hml COLON SEMICOLON    &hml DOUBLE_QUOTES SINGLE_QUOTE  &trans                 &trans
+&en GRAVE  &en DOLLAR  &en AT_SIGN  &en AMPERSAND      &en PRCNT  &en CARET               &en HASH                         &en EXCLAMATION        &en QMARK         &en EQUAL          &en NON_US_BACKSLASH  &kp HASH
+&en TILDE  &trans      &trans       &trans             &trans     &trans                  &en LEFT_PARENTHESIS             &en RIGHT_PARENTHESIS  &en LEFT_BRACKET  &en RIGHT_BRACKET  &en PLUS              &hml UNDER MINUS
+&trans     &trans      &trans       &trans             &trans     &trans                  &en LEFT_BRACE                   &en RIGHT_BRACE        &en LESS_THAN     &en GREATER_THAN   &en ASTERISK          &en SLASH
+                                    &hml COMMA PERIOD  &trans     &hml COLON SEMICOLON    &hml DOUBLE_QUOTES SINGLE_QUOTE  &trans                 &trans
             >;
         };
 
         extra {
             bindings = <
-&out OUT_TOG  &bt BT_CLR_ALL  &bt BT_NXT  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &msc MOVE_Y(10)   &mkp LCLK          &mmv MOVE_UP      &mkp RCLK         &layer_en  &lay_en
-&out OUT_USB  &bt BT_CLR      &bt BT_PRV  &bt BT_SEL 3  &bt BT_SEL 4  &none             &mkp MCLK         &mmv MOVE_LEFT     &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &none      &none
-&out OUT_BLE  &none           &none       &none         &none         &studio_unlock    &msc MOVE_Y(-10)  &mmv MOVE_X(-100)  &msc MOVE_Y(-20)  &mmv MOVE_X(100)  &layer_ru  &lay_ru
+&out OUT_TOG  &bt BT_CLR_ALL  &bt BT_NXT  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &msc MOVE_Y(15)   &mkp LCLK          &mmv MOVE_Y(600)   &mkp RCLK         &none  &layer_en
+&out OUT_USB  &bt BT_CLR      &bt BT_PRV  &bt BT_SEL 3  &bt BT_SEL 4  &none             &mkp MCLK         &mmv MOVE_X(-600)  &mmv MOVE_Y(-600)  &mmv MOVE_X(600)  &none  &none
+&out OUT_BLE  &none           &none       &none         &none         &studio_unlock    &msc MOVE_Y(-15)  &none              &none              &none             &none  &layer_ru
                                           &trans        &trans        &trans            &trans            &trans             &trans
             >;
         };
