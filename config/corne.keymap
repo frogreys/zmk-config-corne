@@ -73,15 +73,27 @@
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41>;
             hold-trigger-on-release;
         };
+
+        on: on {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            toggle-mode = "on";
+        };
+
+        off: off {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            toggle-mode = "off";
+        };
     };
 
     macros {
-        layer_en: new_macro {
+        layer_en: layer_en {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&to 0>, <&macro_tap>, <&kp LA(LS(NUMBER_0))>;
 
-            label = "NEW_MACRO";
+            label = "LAYER_EN";
         };
 
         layer_ru: layer_ru {
