@@ -91,7 +91,7 @@
         layer_en: layer_en {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0>, <&macro_tap>, <&kp LA(LS(NUMBER_0))>;
+            bindings = <&off 1>, <&macro_tap>, <&kp LA(LS(NUMBER_0))>;
 
             label = "LAYER_EN";
         };
@@ -99,7 +99,7 @@
         layer_ru: layer_ru {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 1>, <&macro_tap>, <&kp LA(LS(NUMBER_1))>;
+            bindings = <&on 1>, <&macro_tap>, <&kp LA(LS(NUMBER_1))>;
 
             label = "LAYER_RU";
         };
@@ -118,6 +118,42 @@
             bindings = <&tog 1>, <&macro_tap>, <&kp LA(LS(NUMBER_1))>;
 
             label = "LAY_RU";
+        };
+
+        en: en {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_tap>,
+                <&kp LA(LS(NUMBER_0))>,
+                <&macro_press>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_tap_time 30>,
+                <&macro_tap>,
+                <&kp LA(LS(NUMBER_1))>;
+
+            label = "EN";
+        };
+
+        ru: ru {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_tap>,
+                <&kp LA(LS(NUMBER_1))>,
+                <&macro_press>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_tap_time 30>,
+                <&macro_tap>,
+                <&kp LA(LS(NUMBER_0))>;
+
+            label = "RU";
         };
     };
 
@@ -150,14 +186,14 @@
 
         functional {
             bindings = <
-&kp LC(R)               &kp F1   &kp F2   &kp F3             &kp F4   &kp F5             &kp PAGE_UP    &kp C_PREV          &kp UP      &kp C_NEXT       &kp PRINTSCREEN  &kp BACKSPACE
-&hml (LC(T)) LA(LC(T))  &kp F6   &kp F7   &kp F8             &kp F9   &kp F10            &kp PAGE_DOWN  &kp LEFT_ARROW      &kp DOWN    &kp RIGHT_ARROW  &kp INSERT       &kp CAPS
-&kp LSHFT               &kp F11  &kp F12  &kp F13            &kp F14  &kp F15            &kp HOME       &kp LC(LEFT_ARROW)  &kp LC(D)   &kp LC(RIGHT)    &kp LC(END)      &kp RCTRL
-                                          &kp C_VOLUME_DOWN  &trans   &kp C_VOLUME_UP    &kp C_PLAY     &trans              &kp C_MUTE
+&kp LC(R)             &kp F1   &kp F2   &kp F3             &kp F4   &kp F5             &kp PAGE_UP    &kp C_PREV          &kp UP      &kp C_NEXT       &kp PRINTSCREEN  &kp BACKSPACE
+&hml LC(T) LA(LC(T))  &kp F6   &kp F7   &kp F8             &kp F9   &kp F10            &kp PAGE_DOWN  &kp LEFT_ARROW      &kp DOWN    &kp RIGHT_ARROW  &kp INSERT       &kp CAPS
+&kp LSHFT             &kp F11  &kp F12  &kp F13            &kp F14  &kp F15            &kp HOME       &kp LC(LEFT_ARROW)  &kp LC(D)   &kp LC(RIGHT)    &kp LC(END)      &kp RCTRL
+                                        &kp C_VOLUME_DOWN  &trans   &kp C_VOLUME_UP    &kp C_PLAY     &trans              &kp C_MUTE
             >;
         };
 
-        numbers_symbols {
+        numbers_symbols_en {
             bindings = <
 &trans            &kp DOLLAR    &kp AT_SIGN   &kp AMPERSAND      &kp PRCNT     &kp CARET               &kp HASH                         &kp EXCLAMATION        &kp QMARK         &kp EQUAL          &kp NON_US_BACKSLASH  &trans
 &hml TILDE GRAVE  &kp N1        &kp NUMBER_2  &kp NUMBER_3       &kp NUMBER_4  &kp NUMBER_5            &kp LEFT_PARENTHESIS             &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PLUS              &hml UNDER MINUS
@@ -166,12 +202,21 @@
             >;
         };
 
+        numbers_symbols_ru {
+            bindings = <
+&trans            &en DOLLAR  &en AT_SIGN  &en AMPERSAND      &en PRCNT  &en CARET               &kp HASH                         &en EXCLAMATION        &en QMARK         &en EQUAL          &en NON_US_BACKSLASH  &trans
+&hml TILDE GRAVE  &trans      &trans       &trans             &trans     &trans                  &en LEFT_PARENTHESIS             &en RIGHT_PARENTHESIS  &en LEFT_BRACKET  &en RIGHT_BRACKET  &en PLUS              &hml UNDER MINUS
+&trans            &trans      &trans       &trans             &trans     &trans                  &en LEFT_BRACE                   &en RIGHT_BRACE        &en LESS_THAN     &en GREATER_THAN   &en ASTERISK          &en SLASH
+                                           &hml COMMA PERIOD  &trans     &hml COLON SEMICOLON    &hml DOUBLE_QUOTES SINGLE_QUOTE  &trans                 &trans
+            >;
+        };
+
         extra {
             bindings = <
-&out OUT_TOG  &bt BT_CLR_ALL  &bt BT_NXT  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &msc MOVE_Y(10)     &mkp LCLK            &mmv MOVE_UP        &mkp RCLK         &layer_en  &lay_en
-&out OUT_USB  &bt BT_CLR      &bt BT_PRV  &bt BT_SEL 3  &bt BT_SEL 4  &none             &mkp MCLK           &mmv MOVE_LEFT       &mmv MOVE_DOWN      &mmv MOVE_RIGHT   &none      &none
-&out OUT_BLE  &none           &none       &none         &none         &studio_unlock    &msc (MOVE_Y(-10))  &mmv (MOVE_X(-100))  &msc (MOVE_Y(-20))  &mmv MOVE_X(100)  &layer_ru  &lay_ru
-                                          &trans        &trans        &trans            &trans              &trans               &trans
+&out OUT_TOG  &bt BT_CLR_ALL  &bt BT_NXT  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &msc MOVE_Y(10)   &mkp LCLK          &mmv MOVE_UP      &mkp RCLK         &layer_en  &lay_en
+&out OUT_USB  &bt BT_CLR      &bt BT_PRV  &bt BT_SEL 3  &bt BT_SEL 4  &none             &mkp MCLK         &mmv MOVE_LEFT     &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &none      &none
+&out OUT_BLE  &none           &none       &none         &none         &studio_unlock    &msc MOVE_Y(-10)  &mmv MOVE_X(-100)  &msc MOVE_Y(-20)  &mmv MOVE_X(100)  &layer_ru  &lay_ru
+                                          &trans        &trans        &trans            &trans            &trans             &trans
             >;
         };
     };
@@ -181,6 +226,11 @@
 
         on_extra {
             if-layers = <2 3>;
+            then-layer = <5>;
+        };
+
+        ru_num {
+            if-layers = <1 3>;
             then-layer = <4>;
         };
     };
