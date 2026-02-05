@@ -152,18 +152,18 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&hml LEFT_WIN ESC  &kp Q  &kp W  &kp E      &kp R         &kp T                  &kp Y                 &kp U         &kp I      &kp O       &kp P          &kp BACKSPACE
-&kp TAB            &kp A  &kp S  &kp D      &kp F         &kp G                  &kp H                 &kp J         &kp K      &kp L       &kp SEMICOLON  &kp DEL
-&kp LEFT_SHIFT     &kp Z  &kp X  &kp C      &kp V         &kp B                  &kp N                 &kp M         &kp COMMA  &kp PERIOD  &kp CAPS       &kp RSHFT
+&hml LEFT_WIN ESC  &kp Q  &kp W  &kp E      &kp R         &kp T                  &kp Y                 &kp U         &kp I      &kp O       &kp P           &kp BACKSPACE
+&kp TAB            &kp A  &kp S  &kp D      &kp F         &kp G                  &kp H                 &kp J         &kp K      &kp L       &kp SEMICOLON   &kp DEL
+&kp LEFT_SHIFT     &kp Z  &kp X  &kp C      &kp V         &kp B                  &kp N                 &kp M         &kp COMMA  &kp PERIOD  &kp UNDERSCORE  &kp RSHFT
                                  &kp LCTRL  &tkl 2 SPACE  &hml LEFT_ALT ENTER    &hml RIGHT_ALT ENTER  &tkr 3 SPACE  &kp RCTRL
             >;
         };
 
         base_ru {
             bindings = <
-&trans  &hml RU_CYRILLIC_I RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &hml RU_CYRILLIC_IO RU_CYRILLIC_IE        &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE                               &hml RU_CYRILLIC_SHCHA RU_CYRILLIC_SHA  &hml RU_CYRILLIC_SHA RU_CYRILLIC_SHCHA  &kp RU_CYRILLIC_ZE   &trans
-&trans  &kp RU_CYRILLIC_EF                      &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                        &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O                                 &kp RU_CYRILLIC_EL                      &kp RU_CYRILLIC_DE                      &kp RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_E
-&trans  &kp RU_CYRILLIC_YA                      &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &hml RU_CYRILLIC_SHORT_I RU_CYRILLIC_I    &kp RU_CYRILLIC_TE  &hml RU_CYRILLIC_HARD_SIGN RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE                      &kp RU_CYRILLIC_YU                      &kp RU_CYRILLIC_HA   &trans
+&trans  &hml RU_CYRILLIC_I RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE   &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_KA  &hml RU_CYRILLIC_IO RU_CYRILLIC_IE        &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE                               &hml RU_CYRILLIC_SHCHA RU_CYRILLIC_SHA  &kp RU_CYRILLIC_ZE  &kp RU_CYRILLIC_E    &trans
+&trans  &kp RU_CYRILLIC_EF                      &kp RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                        &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O                                 &kp RU_CYRILLIC_EL                      &kp RU_CYRILLIC_DE  &kp RU_CYRILLIC_ZHE  &trans
+&trans  &kp RU_CYRILLIC_YA                      &kp RU_CYRILLIC_CHE   &kp RU_CYRILLIC_ES  &kp RU_CYRILLIC_EM  &hml RU_CYRILLIC_SHORT_I RU_CYRILLIC_I    &kp RU_CYRILLIC_TE  &hml RU_CYRILLIC_HARD_SIGN RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE                      &kp RU_CYRILLIC_YU  &kp RU_CYRILLIC_HA   &trans
                                                                       &trans              &trans              &trans                                    &trans              &trans                                            &trans
             >;
         };
@@ -179,28 +179,28 @@
 
         numbers_symbols_en {
             bindings = <
-&kp GRAVE  &kp DOLLAR    &kp AT_SIGN   &kp AMPERSAND      &kp PRCNT     &kp CARET               &kp HASH                         &kp EXCLAMATION        &kp QMARK         &kp EQUAL          &kp NON_US_BACKSLASH  &ru HASH
+&kp GRAVE  &kp DOLLAR    &kp AT_SIGN   &kp AMPERSAND      &kp PRCNT     &kp CARET               &kp HASH                         &kp EXCLAMATION        &kp QMARK         &kp EQUAL          &kp NON_US_BACKSLASH  &trans
 &kp TILDE  &kp N1        &kp NUMBER_2  &kp NUMBER_3       &kp NUMBER_4  &kp NUMBER_5            &kp LEFT_PARENTHESIS             &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PLUS              &hml UNDER MINUS
 &trans     &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8       &kp NUMBER_9  &kp NUMBER_0            &kp LEFT_BRACE                   &kp RIGHT_BRACE        &kp LESS_THAN     &kp GREATER_THAN   &kp ASTERISK          &kp SLASH
-                                       &hml COMMA PERIOD  &trans        &hml COLON SEMICOLON    &hml DOUBLE_QUOTES SINGLE_QUOTE  &trans                 &trans
+                                       &hml COMMA PERIOD  &trans        &hml COLON SEMICOLON    &hml DOUBLE_QUOTES SINGLE_QUOTE  &trans                 &ru HASH
             >;
         };
 
         numbers_symbols_ru {
             bindings = <
-&en GRAVE  &en DOLLAR  &en AT_SIGN  &en AMPERSAND      &en PRCNT  &en CARET               &en HASH                         &en EXCLAMATION        &en QMARK         &en EQUAL          &en NON_US_BACKSLASH  &kp HASH
+&en GRAVE  &en DOLLAR  &en AT_SIGN  &en AMPERSAND      &en PRCNT  &en CARET               &en HASH                         &en EXCLAMATION        &en QMARK         &en EQUAL          &en NON_US_BACKSLASH  &trans
 &en TILDE  &trans      &trans       &trans             &trans     &trans                  &en LEFT_PARENTHESIS             &en RIGHT_PARENTHESIS  &en LEFT_BRACKET  &en RIGHT_BRACKET  &en PLUS              &hml UNDER MINUS
 &trans     &trans      &trans       &trans             &trans     &trans                  &en LEFT_BRACE                   &en RIGHT_BRACE        &en LESS_THAN     &en GREATER_THAN   &en ASTERISK          &en SLASH
-                                    &hml COMMA PERIOD  &trans     &hml COLON SEMICOLON    &hml DOUBLE_QUOTES SINGLE_QUOTE  &trans                 &trans
+                                    &hml COMMA PERIOD  &trans     &hml COLON SEMICOLON    &hml DOUBLE_QUOTES SINGLE_QUOTE  &trans                 &kp HASH
             >;
         };
 
         extra {
             bindings = <
-&out OUT_TOG  &bt BT_CLR_ALL  &bt BT_NXT  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &msc MOVE_Y(15)   &mkp LCLK          &mmv MOVE_Y(-400)  &mkp RCLK         &none  &layer_en
-&out OUT_USB  &bt BT_CLR      &bt BT_PRV  &bt BT_SEL 3  &bt BT_SEL 4  &none             &msc MOVE_Y(-15)  &mmv MOVE_X(-500)  &mmv MOVE_Y(400)   &mmv MOVE_X(500)  &none  &layer_ru
-&out OUT_BLE  &none           &none       &none         &none         &studio_unlock    &mkp MCLK         &mmv MOVE_LEFT     &none              &mmv MOVE_RIGHT   &none  &none
-                                          &trans        &trans        &trans            &trans            &trans             &trans
+&out OUT_TOG  &bt BT_CLR_ALL  &bt BT_NXT      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &msc MOVE_Y(15)   &mkp LCLK          &mmv MOVE_Y(-400)  &mkp RCLK         &none  &layer_en
+&out OUT_USB  &bt BT_CLR      &bt BT_PRV      &bt BT_SEL 3  &bt BT_SEL 4  &none           &msc MOVE_Y(-15)  &mmv MOVE_X(-500)  &mmv MOVE_Y(400)   &mmv MOVE_X(500)  &none  &layer_ru
+&out OUT_BLE  &none           &studio_unlock  &none         &none         &none           &mkp MCLK         &mmv MOVE_LEFT     &none              &mmv MOVE_RIGHT   &none  &none
+                                              &sys_reset    &trans        &bootloader     &bootloader       &trans             &soft_off
             >;
         };
     };
