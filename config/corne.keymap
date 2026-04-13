@@ -170,36 +170,36 @@
 
         functional {
             bindings = <
-&kp LC(R)             &kp F1   &kp F2   &kp F3             &kp F4   &kp F5             &kp PAGE_UP    &kp C_PREV          &kp UP      &kp C_NEXT       &kp PRINTSCREEN  &kp LC(LA(DEL))
-&hml LC(T) LA(LC(T))  &kp F6   &kp F7   &kp F8             &kp F9   &kp F10            &kp PAGE_DOWN  &kp LEFT_ARROW      &kp DOWN    &kp RIGHT_ARROW  &kp INSERT       &kp CAPS
-&kp LSHFT             &kp F11  &kp F12  &kp F13            &kp F14  &kp F15            &kp HOME       &kp LC(LEFT_ARROW)  &kp LC(D)   &kp LC(RIGHT)    &kp END          &kp RCTRL
-                                        &kp C_VOLUME_DOWN  &trans   &kp C_VOLUME_UP    &kp C_PLAY     &trans              &kp C_MUTE
+&kp LC(R)             &kp F1   &kp F2   &kp F3   &kp F4   &kp F5     &kp PAGE_UP    &kp C_PREV         &kp UP      &kp C_NEXT       &kp PRINTSCREEN  &kp LC(LA(DEL))
+&hml LC(T) LA(LC(T))  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10    &kp PAGE_DOWN  &kp LEFT_ARROW     &kp DOWN    &kp RIGHT_ARROW  &kp INSERT       &kp CAPS
+&trans                &kp F11  &kp F12  &kp F13  &kp F14  &kp F15    &kp HOME       &kp C_VOLUME_DOWN  &kp C_MUTE  &kp C_VOLUME_UP  &kp END          &trans
+                                        &trans   &trans   &mo 3      &kp C_PLAY     &trans             &trans
             >;
         };
 
         numbers_symbols_en {
             bindings = <
-&kp GRAVE  &kp DOLLAR    &kp AT_SIGN   &kp AMPERSAND      &kp PRCNT     &kp CARET               &kp HASH                         &kp EXCLAMATION        &kp QMARK         &kp EQUAL          &kp NON_US_BACKSLASH  &trans
-&kp TILDE  &kp N1        &kp NUMBER_2  &kp NUMBER_3       &kp NUMBER_4  &kp NUMBER_5            &kp LEFT_PARENTHESIS             &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PLUS              &hml UNDER MINUS
-&trans     &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8       &kp NUMBER_9  &kp NUMBER_0            &kp LEFT_BRACE                   &kp RIGHT_BRACE        &kp LESS_THAN     &kp GREATER_THAN   &kp ASTERISK          &kp SLASH
-                                       &hml COMMA PERIOD  &trans        &hml COLON SEMICOLON    &hml DOUBLE_QUOTES SINGLE_QUOTE  &trans                 &ru HASH
+&kp GRAVE  &kp DOLLAR    &kp AT_SIGN   &kp PERCENT           &kp CARET     &kp AMPERSAND    &kp HASH              &kp EXCLAMATION        &kp QMARK         &kp EQUAL          &kp NON_US_BACKSLASH  &trans
+&kp TILDE  &kp N1        &kp NUMBER_2  &kp NUMBER_3          &kp NUMBER_4  &kp NUMBER_5     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PLUS              &hml UNDER MINUS
+&trans     &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8          &kp NUMBER_9  &kp NUMBER_0     &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp LESS_THAN     &kp GREATER_THAN   &kp ASTERISK          &kp SLASH
+                                       &hml KP_COMMA KP_DOT  &trans        &kp SEMICOLON    &kp SINGLE_QUOTE      &trans                 &ru HASH
             >;
         };
 
         numbers_symbols_ru {
             bindings = <
-&en GRAVE  &en DOLLAR  &en AT_SIGN  &en AMPERSAND      &en PRCNT  &en CARET               &en HASH                         &en EXCLAMATION        &en QMARK         &en EQUAL          &en NON_US_BACKSLASH  &trans
-&en TILDE  &trans      &trans       &trans             &trans     &trans                  &en LEFT_PARENTHESIS             &en RIGHT_PARENTHESIS  &en LEFT_BRACKET  &en RIGHT_BRACKET  &en PLUS              &hml UNDER MINUS
-&trans     &trans      &trans       &trans             &trans     &trans                  &en LEFT_BRACE                   &en RIGHT_BRACE        &en LESS_THAN     &en GREATER_THAN   &en ASTERISK          &en SLASH
-                                    &hml COMMA PERIOD  &trans     &hml COLON SEMICOLON    &hml DOUBLE_QUOTES SINGLE_QUOTE  &trans                 &kp HASH
+&en GRAVE  &en DOLLAR  &en AT_SIGN  &en PERCENT           &en CARET  &en AMPERSAND    &en HASH              &en EXCLAMATION        &en QMARK         &en EQUAL          &en NON_US_BACKSLASH  &trans
+&en TILDE  &trans      &trans       &trans                &trans     &trans           &en LEFT_PARENTHESIS  &en RIGHT_PARENTHESIS  &en LEFT_BRACKET  &en RIGHT_BRACKET  &en PLUS              &hml UNDER MINUS
+&trans     &trans      &trans       &trans                &trans     &trans           &en LEFT_BRACE        &en RIGHT_BRACE        &en LESS_THAN     &en GREATER_THAN   &en ASTERISK          &en SLASH
+                                    &hml KP_COMMA KP_DOT  &trans     &en SEMICOLON    &en SINGLE_QUOTE      &trans                 &kp HASH
             >;
         };
 
         extra {
             bindings = <
-&out OUT_TOG  &bt BT_CLR_ALL  &bt BT_NXT      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &msc MOVE_Y(15)   &mkp LCLK          &mmv MOVE_Y(-400)  &mkp RCLK         &none  &layer_en
-&out OUT_USB  &bt BT_CLR      &bt BT_PRV      &bt BT_SEL 3  &bt BT_SEL 4  &none           &msc MOVE_Y(-15)  &mmv MOVE_X(-500)  &mmv MOVE_Y(400)   &mmv MOVE_X(500)  &none  &layer_ru
-&out OUT_BLE  &none           &studio_unlock  &none         &none         &none           &mkp MCLK         &mmv MOVE_LEFT     &none              &mmv MOVE_RIGHT   &none  &none
+&out OUT_TOG  &bt BT_CLR_ALL  &bt BT_NXT      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &msc MOVE_Y(15)   &mkp LCLK          &mmv MOVE_Y(-500)  &mkp RCLK         &none  &layer_en
+&out OUT_USB  &bt BT_CLR      &bt BT_PRV      &bt BT_SEL 3  &bt BT_SEL 4  &none           &msc MOVE_Y(-15)  &mmv MOVE_X(-600)  &mmv MOVE_Y(500)   &mmv MOVE_X(600)  &none  &layer_ru
+&out OUT_BLE  &none           &studio_unlock  &none         &none         &none           &mkp MCLK         &none              &none              &none             &none  &none
                                               &sys_reset    &trans        &bootloader     &bootloader       &trans             &soft_off
             >;
         };
