@@ -170,10 +170,10 @@
 
         functional {
             bindings = <
-&kp LC(R)             &kp F1   &kp F2   &kp F3   &kp F4   &kp F5     &kp PAGE_UP    &kp C_PREV         &kp UP      &kp C_NEXT       &kp PRINTSCREEN  &kp LC(LA(DEL))
-&hml LC(T) LA(LC(T))  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10    &kp PAGE_DOWN  &kp LEFT_ARROW     &kp DOWN    &kp RIGHT_ARROW  &kp INSERT       &kp CAPS
-&trans                &kp F11  &kp F12  &kp F13  &kp F14  &kp F15    &kp HOME       &kp C_VOLUME_DOWN  &kp C_MUTE  &kp C_VOLUME_UP  &kp END          &trans
-                                        &trans   &trans   &mo 3      &kp C_PLAY     &trans             &trans
+&kp LC(R)             &kp C_VOLUME_UP    &kp C_PREVIOUS  &kp UP_ARROW    &kp C_NEXT       &msc MOVE_Y(15)     &kp F1  &kp F2   &kp F3   &kp F4   &kp PRINTSCREEN  &trans
+&hml LC(T) LA(LC(T))  &kp C_VOLUME_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &msc MOVE_Y(-15)    &kp F5  &kp F6   &kp F7   &kp F8   &kp INSERT       &trans
+&trans                &kp C_MUTE         &kp HOME        &kp C_PLAY      &kp END          &kt LCTRL           &kp F9  &kp F10  &kp F11  &kp F12  &kp CAPS         &trans
+                                                         &trans          &trans           &mo 3               &trans  &trans   &trans
             >;
         };
 
