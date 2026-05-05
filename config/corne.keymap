@@ -188,7 +188,7 @@
 
         numbers_symbols_ru {
             bindings = <
-&en GRAVE  &en DOLLAR  &en AT_SIGN  &en PERCENT           &en CARET  &en AMPERSAND    &en HASH              &en EXCLAMATION        &en QMARK         &en EQUAL          &en NON_US_BACKSLASH  &trans
+&en GRAVE  &en DOLLAR  &en AT_SIGN  &en PERCENT           &en CARET  &en AMPS         &en HASH              &en EXCLAMATION        &en QMARK         &en EQUAL          &en NON_US_BACKSLASH  &trans
 &en TILDE  &trans      &trans       &trans                &trans     &trans           &en LEFT_PARENTHESIS  &en RIGHT_PARENTHESIS  &en LEFT_BRACKET  &en RIGHT_BRACKET  &en PLUS              &hml UNDER MINUS
 &trans     &trans      &trans       &trans                &trans     &trans           &en LEFT_BRACE        &en RIGHT_BRACE        &en LESS_THAN     &en GREATER_THAN   &en ASTERISK          &en SLASH
                                     &hml KP_COMMA KP_DOT  &trans     &en SEMICOLON    &en SINGLE_QUOTE      &trans                 &kp HASH
