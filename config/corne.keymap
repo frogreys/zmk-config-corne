@@ -85,6 +85,15 @@
             #binding-cells = <1>;
             toggle-mode = "off";
         };
+
+        backspace_delete: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BACKSPACE_DELETE";
+            bindings = <&hml LC(DELETE) DELETE>, <&hml LC(BACKSPACE) BACKSPACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -152,36 +161,36 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&hml LEFT_WIN ESC  &hml LC(Q) Q  &kp W         &kp E         &hml LC(R) R  &hml LC(T) T           &hml LC(Y) Y          &kp U         &kp I      &kp O       &hml LC(P) P    &kp BACKSPACE
-&kp TAB            &hml LC(A) A  &hml LC(S) S  &hml LC(D) D  &hml LC(F) F  &kp G                  &kp H                 &kp J         &kp K      &kp L       &kp SEMICOLON   &kp DEL
-&kp LEFT_SHIFT     &hml LC(Z) Z  &hml LC(X) X  &hml LC(C) C  &hml LC(V) V  &kp B                  &kp N                 &kp M         &kp COMMA  &kp PERIOD  &kp UNDERSCORE  &kp RSHFT
-                                               &kp LCTRL     &tkl 2 SPACE  &hml LEFT_ALT ENTER    &hml RIGHT_ALT ENTER  &tkr 3 SPACE  &kp RCTRL
+&kp TAB         &kp Q         &kp W         &kp E         &hml LC(R) R  &hml LC(T) T        &kp Y             &kp U         &kp I          &kp O       &kp P           &backspace_delete
+&kp LEFT_SHIFT  &hml LC(A) A  &hml LC(S) S  &kp D         &hml LC(F) F  &kp G               &kp H             &kp J         &kp K          &kp L       &kp SEMICOLON   &kp RSHFT
+&hml LWIN ESC   &kp Z         &hml LC(X) X  &hml LC(C) C  &hml LC(V) V  &kp B               &kp N             &kp M         &kp COMMA      &kp PERIOD  &kp UNDERSCORE  &none
+                                            &kp LEFT_ALT  &tkl 2 SPACE  &hml LCTRL ENTER    &hml RCTRL ENTER  &tkr 3 SPACE  &kp RIGHT_ALT
             >;
         };
 
         base_ru {
             bindings = <
-&trans  &hml RU_CYRILLIC_I RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE          &kp RU_CYRILLIC_U          &hml LC(R) RU_CYRILLIC_KA  &hml RU_CYRILLIC_IO RU_CYRILLIC_IE        &hml LC(Y) RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE                               &hml RU_CYRILLIC_SHCHA RU_CYRILLIC_SHA  &kp RU_CYRILLIC_ZE  &hml LC(P) RU_CYRILLIC_E  &trans
-&trans  &hml LC(A) RU_CYRILLIC_EF               &hml LC(S) RU_CYRILLIC_YERU  &hml LC(D) RU_CYRILLIC_VE  &hml LC(F) RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                        &kp RU_CYRILLIC_ER         &kp RU_CYRILLIC_O                                 &kp RU_CYRILLIC_EL                      &kp RU_CYRILLIC_DE  &kp RU_CYRILLIC_ZHE       &trans
-&trans  &hml LC(Z) RU_CYRILLIC_YA               &hml LC(X) RU_CYRILLIC_CHE   &hml LC(C) RU_CYRILLIC_ES  &hml LC(C) RU_CYRILLIC_EM  &hml RU_CYRILLIC_SHORT_I RU_CYRILLIC_I    &kp RU_CYRILLIC_TE         &hml RU_CYRILLIC_HARD_SIGN RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE                      &kp RU_CYRILLIC_YU  &kp RU_CYRILLIC_HA        &trans
-                                                                             &trans                     &trans                     &trans                                    &trans                     &trans                                            &trans
+&trans  &hml RU_CYRILLIC_I RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_TSE          &kp RU_CYRILLIC_U          &hml LC(R) RU_CYRILLIC_KA  &hml RU_CYRILLIC_IO RU_CYRILLIC_IE        &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE                               &hml RU_CYRILLIC_SHCHA RU_CYRILLIC_SHA  &kp RU_CYRILLIC_ZE  &kp RU_CYRILLIC_E    &trans
+&trans  &hml LC(A) RU_CYRILLIC_EF               &hml LC(S) RU_CYRILLIC_YERU  &kp RU_CYRILLIC_VE         &hml LC(F) RU_CYRILLIC_A   &kp RU_CYRILLIC_PE                        &kp RU_CYRILLIC_ER  &kp RU_CYRILLIC_O                                 &kp RU_CYRILLIC_EL                      &kp RU_CYRILLIC_DE  &kp RU_CYRILLIC_ZHE  &trans
+&trans  &kp RU_CYRILLIC_YA                      &hml LC(X) RU_CYRILLIC_CHE   &hml LC(C) RU_CYRILLIC_ES  &hml LC(C) RU_CYRILLIC_EM  &hml RU_CYRILLIC_SHORT_I RU_CYRILLIC_I    &kp RU_CYRILLIC_TE  &hml RU_CYRILLIC_HARD_SIGN RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE                      &kp RU_CYRILLIC_YU  &kp RU_CYRILLIC_HA   &trans
+                                                                             &trans                     &trans                     &trans                                    &trans              &trans                                            &trans
             >;
         };
 
         functional {
             bindings = <
 &kp LC(R)             &kp C_VOLUME_UP    &kp C_PREVIOUS  &kp UP_ARROW    &kp C_NEXT       &msc MOVE_Y(15)     &kp F1  &kp F2   &kp F3   &kp F4   &kp PRINTSCREEN  &trans
-&hml LC(T) LA(LC(T))  &kp C_VOLUME_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &msc MOVE_Y(-15)    &kp F5  &kp F6   &kp F7   &kp F8   &kp INSERT       &trans
-&trans                &kp C_MUTE         &kp HOME        &kp C_PLAY      &kp END          &kt LCTRL           &kp F9  &kp F10  &kp F11  &kp F12  &kp CAPS         &trans
-                                                         &trans          &trans           &mo 3               &trans  &trans   &trans
+&trans                &kp C_VOLUME_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &msc MOVE_Y(-15)    &kp F5  &kp F6   &kp F7   &kp F8   &kp INSERT       &trans
+&hml LA(LC(T)) LC(T)  &kp C_MUTE         &kp HOME        &kp C_PLAY      &kp END          &none               &kp F9  &kp F10  &kp F11  &kp F12  &kp CAPS         &trans
+                                                         &mo 3           &trans           &trans              &trans  &trans   &trans
             >;
         };
 
         numbers_symbols_en {
             bindings = <
 &kp GRAVE  &kp DOLLAR    &kp AT_SIGN   &kp PRCNT          &kp CARET     &kp AMPS         &kp HASH              &kp EXCLAMATION        &kp QMARK         &kp EQUAL          &kp NON_US_BACKSLASH  &trans
-&kp TILDE  &kp N1        &kp NUMBER_2  &kp NUMBER_3       &kp NUMBER_4  &kp NUMBER_5     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PLUS              &hml UNDER MINUS
-&trans     &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8       &kp NUMBER_9  &kp NUMBER_0     &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp LESS_THAN     &kp GREATER_THAN   &kp ASTERISK          &kp SLASH
+&trans     &kp N1        &kp NUMBER_2  &kp NUMBER_3       &kp NUMBER_4  &kp NUMBER_5     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PLUS              &hml UNDER MINUS
+&kp TILDE  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8       &kp NUMBER_9  &kp NUMBER_0     &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp LESS_THAN     &kp GREATER_THAN   &kp ASTERISK          &kp SLASH
                                        &hml COMMA KP_DOT  &trans        &kp SEMICOLON    &kp SINGLE_QUOTE      &trans                 &ru HASH
             >;
         };
@@ -189,8 +198,8 @@
         numbers_symbols_ru {
             bindings = <
 &en GRAVE  &en DOLLAR  &en AT_SIGN  &en PERCENT           &en CARET  &en AMPS         &en HASH              &en EXCLAMATION        &en QMARK         &en EQUAL          &en NON_US_BACKSLASH  &trans
-&en TILDE  &trans      &trans       &trans                &trans     &trans           &en LEFT_PARENTHESIS  &en RIGHT_PARENTHESIS  &en LEFT_BRACKET  &en RIGHT_BRACKET  &en PLUS              &hml UNDER MINUS
-&trans     &trans      &trans       &trans                &trans     &trans           &en LEFT_BRACE        &en RIGHT_BRACE        &en LESS_THAN     &en GREATER_THAN   &en ASTERISK          &en SLASH
+&trans     &trans      &trans       &trans                &trans     &trans           &en LEFT_PARENTHESIS  &en RIGHT_PARENTHESIS  &en LEFT_BRACKET  &en RIGHT_BRACKET  &en PLUS              &hml UNDER MINUS
+&en TILDE  &trans      &trans       &trans                &trans     &trans           &en LEFT_BRACE        &en RIGHT_BRACE        &en LESS_THAN     &en GREATER_THAN   &en ASTERISK          &en SLASH
                                     &hml RU_COMMA RU_DOT  &trans     &en SEMICOLON    &en SINGLE_QUOTE      &trans                 &kp HASH
             >;
         };
